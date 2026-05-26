@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="usuario"
+            type="com.example.examen1final_marcosmerino.model.User" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EDITAR SOCIO"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email (No modificable):"
+                android:textColor="#888888"
+                android:textSize="12sp"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:id="@+id/txtEdiEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{usuario.email}"
+                android:textColor="#888888"
+                android:textSize="16sp"
+                android:gravity="center_vertical"
+                android:padding="12dp"
+                android:layout_marginBottom="12dp"/>
+
+            <EditText
+                android:id="@+id/edtEdiNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nombre"
+                android:text="@{usuario.nombre}"
+                android:inputType="textPersonName"
+                android:layout_marginBottom="12dp"/>
+
+            <EditText
+                android:id="@+id/edtEdiApellidos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Apellidos"
+                android:text="@{usuario.apellidos}"
+                android:inputType="textPersonName"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rol:"
+                android:textSize="14sp"
+                android:layout_marginBottom="4dp"/>
+
+            <RadioGroup
+                android:id="@+id/rgEdiRol"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <RadioButton
+                    android:id="@+id/rbEdiFollower"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Follower"
+                    android:layout_marginEnd="16dp"/>
+
+                <RadioButton
+                    android:id="@+id/rbEdiLeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Leader"/>
+
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/edtEdiPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contraseña"
+                android:text="@{usuario.password}"
+                android:inputType="textPassword"
+                android:layout_marginBottom="16dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="20dp">
+
+                <Button
+                    android:id="@+id/btnEdiFoto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nueva Foto"/>
+
+                <ImageView
+                    android:id="@+id/imgEdiPreview"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="16dp"
+                    android:scaleType="centerCrop"
+                    tools:srcCompat="@tools:sample/avatars"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnEdiGuardar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="GUARDAR CAMBIOS"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </ScrollView>
+</layout>

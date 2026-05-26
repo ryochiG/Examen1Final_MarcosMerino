@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ROCK VALLADOLID"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- SECCIÓN LOGIN -->
+            <LinearLayout
+                android:id="@+id/layoutLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Iniciar Sesión"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="16dp"/>
+
+                <EditText
+                    android:id="@+id/edtLoginEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:layout_marginBottom="12dp"/>
+
+                <EditText
+                    android:id="@+id/edtLoginPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Contraseña"
+                    android:inputType="textPassword"
+                    android:layout_marginBottom="24dp"/>
+
+                <Button
+                    android:id="@+id/btnAcceder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ENTRAR"
+                    android:layout_marginBottom="16dp"/>
+
+                <Button
+                    android:id="@+id/btnIrRegistro"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Registrar nuevo socio"
+                    android:layout_gravity="center_horizontal"/>
+
+            </LinearLayout>
+
+            <!-- SECCIÓN REGISTRO -->
+            <LinearLayout
+                android:id="@+id/layoutRegistro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nuevo Socio"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="16dp"/>
+
+                <EditText
+                    android:id="@+id/edtRegNombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nombre"
+                    android:inputType="textPersonName"
+                    android:layout_marginBottom="12dp"/>
+
+                <EditText
+                    android:id="@+id/edtRegApellidos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Apellidos"
+                    android:inputType="textPersonName"
+                    android:layout_marginBottom="12dp"/>
+
+                <EditText
+                    android:id="@+id/edtRegEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:layout_marginBottom="12dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rol del socio:"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <RadioGroup
+                    android:id="@+id/rgRol"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <RadioButton
+                        android:id="@+id/rbFollower"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Follower"
+                        android:checked="true"
+                        android:layout_marginEnd="16dp"/>
+
+                    <RadioButton
+                        android:id="@+id/rbLeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Leader"/>
+
+                </RadioGroup>
+
+                <EditText
+                    android:id="@+id/edtRegPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Contraseña"
+                    android:inputType="textPassword"
+                    android:layout_marginBottom="16dp"/>
+
+                <!-- Seleccionar Foto -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="24dp">
+
+                    <Button
+                        android:id="@+id/btnSeleccionarFoto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Foto"/>
+
+                    <ImageView
+                        android:id="@+id/imgFotoPreview"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="16dp"
+                        android:scaleType="centerCrop"
+                        android:visibility="gone"
+                        tools:srcCompat="@tools:sample/avatars"/>
+
+                    <TextView
+                        android:id="@+id/txtFotoInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sin foto"
+                        android:layout_marginStart="16dp"/>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnRegistrar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="REGISTRAR"
+                    android:layout_marginBottom="16dp"/>
+
+                <Button
+                    android:id="@+id/btnIrLogin"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ya tengo cuenta (Login)"
+                    android:layout_gravity="center_horizontal"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</layout>

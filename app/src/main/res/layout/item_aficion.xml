@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="aficion"
+            type="com.example.examen1final_marcosmerino.model.Aficion" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/imgIcono"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="16dp"/>
+
+        <TextView
+            android:id="@+id/txtNombre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@{aficion.nombre}"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <CheckBox
+            android:id="@+id/chkSeleccion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="@{aficion.seleccionada}"/>
+
+    </LinearLayout>
+</layout>
