@@ -38,7 +38,6 @@ class AdaptadorAficiones(
 
         val elemento = lista[posicion]
         binding.aficion = elemento
-        binding.imgIcono.setImageResource(elemento.iconoRes)
 
         binding.chkSeleccion.setOnCheckedChangeListener(null)
         binding.chkSeleccion.isChecked = elemento.seleccionada
